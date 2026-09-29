@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Thirai Readers' Circle</title>
+
+
+    <!-- ================= BOOTSTRAP ================= -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ================= CSS ================= -->
+
+    <style>
+
+        /* ---------- GENERAL ---------- */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Noto Sans Tamil", sans-serif;
+            background: #fffaf5;
+            color: #321014;
+        }
+
+
+        /* ---------- NAVBAR ---------- */
+
+        .navbar {
+            background: #280308;
+            padding: 14px 0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+        }
+
+        .navbar-brand {
+            color: #f4c44e !important;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 15px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #f4c44e !important;
+        }
+
+
+        /* ---------- HOME ---------- */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 20px 80px;
+
+            background:
+                linear-gradient(
+                    rgba(45, 2, 8, 0.95),
+                    rgba(45, 2, 8, 0.98)
+                );
+
+            color: white;
+        }
+
+        .logo {
+            width: 310px;
+            max-width: 85%;
+
+            border-radius: 50%;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 0 35px rgba(244,196,78,0.45);
+        }
+
+        .hero h1 {
+            color: #f4c44e;
+            font-size: 43px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .tagline {
+            color: #f4c44e;
+            font-size: 19px;
+            margin-top: 15px;
+        }
+
+
+        /* ---------- BUTTON ---------- */
+
+        .gold-btn {
+            display: inline-block;
+
+            background: #f4c44e;
+            color: #35070d;
+
+            padding: 12px 28px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            margin-top: 15px;
+
+            transition: 0.3s;
+        }
+
+        .gold-btn:hover {
+            background: white;
+            color: #35070d;
+            transform: translateY(-3px);
+        }
+
+
+        /* ---------- SECTIONS ---------- */
+
+        .section {
+            padding: 90px 20px;
+        }
+
+        .dark-section {
+            background: #35070d;
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+
+            color: #8b141c;
+
+            font-size: 32px;
+
+            font-weight: 800;
+        }
+
+        .dark-section .section-title {
+            color: #f4c44e;
+        }
+
+        .line {
+            width: 70px;
+            height: 4px;
+
+            background: #f4c44e;
+
+            margin: 15px auto 40px;
+
+            border-radius: 10px;
+        }
+
+
+        /* ---------- ABOUT ---------- */
+
+        .about-box {
+            max-width: 900px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 25px rgba(0,0,0,0.08);
+
+            text-align: center;
+
+            line-height: 2;
+
+            font-size: 17px;
+        }
+
+
+        /* ---------- WHAT WE DO ---------- */
+
+        .activity-card {
+            height: 100%;
+
+            background: #4a0b12;
+
+            border: 1px solid #75401f;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            transition: 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #f4c44e;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .activity-icon {
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .activity-card h4 {
+            color: #f4c44e;
+
+            font-weight: 700;
+
+            font-size: 20px;
+        }
+
+        .activity-card p {
+            color: #eeeeee;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+        /* ---------- DESCRIPTION ---------- */
+
+        .description {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            line-height: 2;
+
+            font-size: 17px;
+        }
+
+
+        /* ---------- EVENTS ---------- */
+
+        .event-box {
+            max-width: 750px;
+
+            margin: 40px auto 0;
+
+            background: white;
+
+            padding: 45px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 25px rgba(0,0,0,0.1);
+        }
+
+        .event-box h3 {
+            color: #8b141c;
+
+            font-weight: 700;
+        }
+
+
+        /* ---------- OUR READS ---------- */
+
+        .read-box {
+            max-width: 800px;
+
+            margin: 40px auto 0;
+
+            background: #4a0b12;
+
+            border: 1px solid #75401f;
+
+            padding: 40px;
+
+            border-radius: 18px;
+
+            text-align: center;
+        }
+
+        .read-box h3 {
+            color: #f4c44e;
+        }
+
+        .read-box p {
+            line-height: 2;
+        }
+
+
+        /* ---------- MEMBERS ---------- */
+
+        .member-card {
+            height: 100%;
+
+            background: white;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            border-top: 5px solid #8b141c;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .member-card.founder {
+            border-top-color: #f4c44e;
+
+            background: #fff8df;
+        }
+
+        .member-icon {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .member-card h4 {
+            color: #6f1017;
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+        }
+
+        .member-card p {
+            color: #666;
+
+            font-size: 15px;
+
+            margin-bottom: 0;
+        }
+
+
+        /* ---------- JOIN ---------- */
+
+        .join-section {
+            padding: 100px 20px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4c080e,
+                    #200206
+                );
+        }
+
+        .join-section h2 {
+            color: #f4c44e;
+
+            font-size: 38px;
+
+            font-weight: 800;
+        }
+
+        .join-section p {
+            font-size: 18px;
+
+            margin: 7px;
+        }
+
+        .join-section .highlight {
+            color: #f4c44e;
+
+            font-weight: 700;
+
+            margin-top: 20px;
+        }
+
+
+        /* ---------- FOUNDER ---------- */
+
+        .founder-box {
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 45px 25px;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: 20px;
+
+            border: 1px solid #e6c35a;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .founder-icon {
+            font-size: 55px;
+
+            margin-bottom: 15px;
+        }
+
+        .founder-box h2 {
+            color: #6f1017;
+
+            font-weight: 800;
+        }
+
+        .founder-box p {
+            color: #a47712;
+
+            font-weight: 600;
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        .contact-box {
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            text-align: center;
+
+            background: #4a0b12;
+
+            border-radius: 18px;
+        }
+
+        .contact-box h3 {
+            color: #f4c44e;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-box a {
+            color: #f4c44e;
+
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background: #1b0205;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+        }
+
+        footer h5 {
+            color: #f4c44e;
+
+            font-weight: 800;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+        .copyright {
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .logo {
+                width: 230px;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+            .navbar-brand {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- NAVBAR -->
+<!-- ================================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            திரை
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#activities">
+                        What We Do
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#events">
+                        Events
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#reads">
+                        Our Reads
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#members">
+                        Members
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#join">
+                        Join
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================================================= -->
+<!-- HOME -->
+<!-- ================================================= -->
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+
+        <!-- LOGO -->
+
+        <img
+            src="C:\Users\Admin\Downloads\_.jpeg"
+            alt="Thirai Readers Circle Logo"
+            class="logo">
+
+
+        <h1>
+            THIRAI READERS’ CIRCLE
+        </h1>
+
+
+        <h2>
+            திரை வாசகர் வட்டம்
+        </h2>
+
+
+        <p class="tagline">
+            வாசிப்போம் • சிந்திப்போம் • பகிர்வோம்
+        </p>
+
+
+        <a href="#about" class="gold-btn">
+            Explore Thirai
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- ABOUT -->
+<!-- ================================================= -->
+
+<section id="about" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            ABOUT THIRAI
+        </h2>
+
+        <div class="line"></div>
+
+
+        <div class="about-box">
+
+            <p>
+                திரை வாசகர் வட்டம் என்பது வாசிப்பை மையமாகக் கொண்டு
+                சிந்தனை, உரையாடல் மற்றும் அறிவுப் பகிர்வை வளர்க்கும்
+                வாசகர் சமூகமாகும்.
+            </p>
+
+            <p>
+                புத்தகங்களை வாசிப்பதோடு மட்டுமல்லாமல், அவற்றைப் பற்றி
+                சிந்தித்து, விவாதித்து, கருத்துகளைப் பகிர்ந்து கொள்வதற்கான
+                ஒரு திறந்த வாசிப்பு தளமாக திரை செயல்படுகிறது.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- WHAT WE DO -->
+<!-- ================================================= -->
+
+<section id="activities" class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            WHAT WE DO
+        </h2>
+
+        <div class="line"></div>
+
+
+        <div class="row g-4">
+
+
+            <!-- 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        📚
+                    </div>
+
+                    <h4>
+                        Book Discussions
+                    </h4>
+
+                    <p>
+                        புத்தகங்களை வாசித்து அவற்றைப் பற்றிய
+                        கருத்துகள் மற்றும் சிந்தனைகளைப் பகிர்தல்.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        ✍️
+                    </div>
+
+                    <h4>
+                        Author Interactions
+                    </h4>
+
+                    <p>
+                        எழுத்தாளர்களுடன் உரையாடல்கள் மற்றும்
+                        சிறப்பு சந்திப்புகள்.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        📖
+                    </div>
+
+                    <h4>
+                        Reading Sessions
+                    </h4>
+
+                    <p>
+                        உறுப்பினர்களுடன் இணைந்து வாசிப்பு
+                        நிகழ்வுகளை நடத்துதல்.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        💬
+                    </div>
+
+                    <h4>
+                        Literary Conversations
+                    </h4>
+
+                    <p>
+                        இலக்கியம் சார்ந்த திறந்த உரையாடல்கள்
+                        மற்றும் கலந்துரையாடல்கள்.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        🎤
+                    </div>
+
+                    <h4>
+                        Public Speaking & Knowledge Sharing
+                    </h4>
+
+                    <p>
+                        பொதுப் பேச்சு மற்றும் அறிவுப் பகிர்வு
+                        நிகழ்வுகள்.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 6 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        🌍
+                    </div>
+
+                    <h4>
+                        Educational & Social Discussions
+                    </h4>
+
+                    <p>
+                        கல்வி மற்றும் சமூக முக்கியத்துவம்
+                        கொண்ட விவாதங்கள்.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- EVENTS -->
+<!-- ================================================= -->
+
+<section id="events" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            OUR EVENTS
+        </h2>
+
+        <div class="line"></div>
+
+
+        <p class="description">
+
+            திரை வாசகர் வட்டத்தின் வாசிப்பு சந்திப்புகள்,
+            புத்தக உரையாடல்கள், எழுத்தாளர் சந்திப்புகள் மற்றும்
+            சிறப்பு நிகழ்வுகள்.
+
+        </p>
+
+
+        <div class="event-box">
+
+            <h3>
+                October 2nd , 2026
+            </h3>
+
+            <p>
+                காந்தியை மீண்டும் வாசிப்போம்
+            </p>
+
+            <a href="#contact" class="gold-btn">
+                View Events
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- OUR READS -->
+<!-- ================================================= -->
+
+<section id="reads" class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            OUR READS
+        </h2>
+
+        <div class="line"></div>
+
+
+        <p class="description">
+
+            திரை வாசகர் வட்டத்தில் வாசிக்கப்படும் மற்றும்
+            உறுப்பினர்களால் பரிந்துரைக்கப்படும் புத்தகங்கள்,
+            எழுத்தாளர்கள் மற்றும் வாசிப்பு குறிப்புகள்.
+
+        </p>
+
+
+        <div class="read-box">
+
+            <h3>
+                📚 Reading • Thinking • Sharing
+            </h3>
+
+            <p>
+                புத்தகங்களை வாசிப்போம்,
+                கருத்துகளைப் பகிர்வோம்,
+                புதிய சிந்தனைகளை உருவாக்குவோம்.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- AUTHORITY MEMBERS -->
+<!-- ================================================= -->
+
+<section id="members" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            THIRAI AUTHORITY
+        </h2>
+
+        <div class="line"></div>
+
+
+        <div class="row g-4">
+
+
+            <!-- FOUNDER -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card founder">
+
+                    <div class="member-icon">
+                        👑
+                    </div>
+
+                    <h4>
+                        Comrade A. Mohammed Muzammil
+                    </h4>
+
+                    <p>
+                        Founder | Author | Orator | Storyteller
+                    </p>
+
+                    <p>
+                        <strong>THIRAI</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRESIDENT -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        ⭐
+                    </div>
+
+                    <h4>
+                        Comrade Bhavana
+                    </h4>
+
+                    <p>
+                        President
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VICE PRESIDENT -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        ⭐
+                    </div>
+
+                    <h4>
+                        Comrade Josewah
+                    </h4>
+
+                    <p>
+                        Vice President
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECRETARY GENERAL -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        📋
+                    </div>
+
+                    <h4>
+                        Comrade Mohan Prakash
+                    </h4>
+
+                    <p>
+                        Secretary General
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- HONORARY EXECUTIVE PATRON -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        🏅
+                    </div>
+
+                    <h4>
+                        Comrade Veera Lakshmi
+                    </h4>
+
+                    <p>
+                        Honorary Executive Patron
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEPUTY SECRETARY -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        📋
+                    </div>
+
+                    <h4>
+                        Comrade Sabura Yasmin
+                    </h4>
+
+                    <p>
+                        Deputy Secretary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADMINISTRATIVE OFFICER -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        🏛️
+                    </div>
+
+                    <h4>
+                        Comrade Noor Mohammad Nusrath
+                    </h4>
+
+                    <p>
+                        Honorary Administrative Officer
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LITERATURE SECRETARY -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        📚
+                    </div>
+
+                    <h4>
+                        Comrade Punitha
+                    </h4>
+
+                    <p>
+                        Literature Secretary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DIGITAL & DESIGN SECRETARY -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="member-card">
+
+                    <div class="member-icon">
+                        💻
+                    </div>
+
+                    <h4>
+                        Comrade Savitha
+                    </h4>
+
+                    <p>
+                        Digital & Design Secretary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- JOIN THIRAI -->
+<!-- ================================================= -->
+
+<section id="join" class="join-section">
+
+    <div class="container">
+
+        <h2>
+            JOIN THIRAI
+        </h2>
+
+        <div class="line"></div>
+
+
+        <p>
+            வாசிக்க விரும்புகிறீர்களா?
+        </p>
+
+        <p>
+            சிந்திக்க விரும்புகிறீர்களா?
+        </p>
+
+        <p>
+            உரையாட விரும்புகிறீர்களா?
+        </p>
+
+
+        <p class="highlight">
+            திரை வாசகர் வட்டத்துடன் இணைந்திடுங்கள்.
+        </p>
+
+
+        <a href="#contact" class="gold-btn">
+            JOIN US
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOUNDER -->
+<!-- ================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            FOUNDER
+        </h2>
+
+        <div class="line"></div>
+
+
+        <div class="founder-box">
+
+            <div class="founder-icon">
+                👑
+            </div>
+
+            <h2>
+                அ. முகம்மது முஜம்மில் கான்
+            </h2>
+
+            <p>
+                Founder & President
+            </p>
+
+            <h5>
+                Thirai Readers’ Circle
+            </h5>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- CONTACT -->
+<!-- ================================================= -->
+
+<section id="contact" class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            CONTACT
+        </h2>
+
+        <div class="line"></div>
+
+
+        <div class="contact-box">
+
+            <h3>
+                Thirai Readers’ Circle
+            </h3>
+
+
+            <p>
+                Instagram:
+                <a
+                    href="https://instagram.com/Muzammilzone"
+                    target="_blank">
+
+                    @Muzammilzone
+
+                </a>
+            </p>
+
+
+            <p class="tagline">
+                வாசிப்போம் • சிந்திப்போம் • பகிர்வோம்
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <h5>
+            THIRAI READERS’ CIRCLE
+        </h5>
+
+        <p>
+            வாசிப்போம் • சிந்திப்போம் • பகிர்வோம்
+        </p>
+
+        <p class="copyright">
+            © 2026 Thirai Readers’ Circle.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================================================= -->
+<!-- BOOTSTRAP JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>
